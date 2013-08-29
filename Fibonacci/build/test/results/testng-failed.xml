@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Fibonacci]">
+  <test name="TestNG tests(failed)" preserve-order="true">
+    <classes>
+      <class name="fibonacci.FibonacciNGTest">
+        <methods>
+          <include name="setUpMethod"/>
+          <include name="testMain"/>
+          <include name="tearDownClass"/>
+          <include name="tearDownMethod"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- fibonacci.FibonacciNGTest -->
+    </classes>
+  </test> <!-- TestNG tests(failed) -->
+</suite> <!-- Failed suite [Fibonacci] -->
