@@ -24,14 +24,13 @@ public class IntegerList {
         return sum;
     }
     
-    public IntegerList Reverse() {
-        IntegerList copy = new IntegerList();
+    public void Reverse() {
+        Vector copy = new Vector();
         int j = 0;
         for(int i = list.size()-1; i >= 0; i--) {
-            copy.Add(list.get(i));
+            copy.add(list.get(i));
         }
-       
-        return copy;
+        list = copy;
     }
     
     public int GetElement(int position) {
@@ -93,7 +92,7 @@ public class IntegerList {
             System.out.println("With less Elements " + element);
         }
         
-        list_b = list.Reverse();
+        list_b.Reverse();
         
         for (int element : list_b.list) {
             System.out.println("Reversed Elements " + element);

@@ -78,10 +78,10 @@ public class IntegerListNGTest {
         expResult.Add(3);
         expResult.Add(2);
         expResult.Add(1);
-        IntegerList result = instance.Reverse();
+        instance.Reverse();
         
         for (int i = 0; i < expResult.size(); i++) {
-          assertEquals(result.GetElement(i), expResult.GetElement(i));   
+          assertEquals(instance.GetElement(i), expResult.GetElement(i));   
         }
     }
 
