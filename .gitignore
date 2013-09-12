@@ -4,3 +4,8 @@
 *.jar
 *.war
 *.ear
+/Relations/build/
+/Inscription/nbproject/private/
+/Inscription/build/
+/Relation/build/
+/Relation/nbproject/private/
