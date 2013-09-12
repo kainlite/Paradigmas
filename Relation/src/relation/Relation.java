@@ -47,13 +47,16 @@ public class Relation {
        }
        
        // Printing enrolled students for course_1
-       for(Object student : course_1.enrolledStudents()) {
-           System.out.println("Enrolled in course_1: " + (String)student);
+       for(int i = 0; i <= course_1.enrolledStudents().size()-1; i++) {
+           System.out.println("Enrolled in course_1: " + course_1.enrolledStudents().get(i) + 
+                   " On date: " + course_1.getEnrolledDates().get(i)
+                   );
        }
 
        // Printing enrolled students for course_2
-       for(Object student : course_2.enrolledStudents()) {
-           System.out.println("Enrolled in course_2: " + (String)student);
+       for(int i = 0; i <= course_2.enrolledStudents().size()-1; i++) {
+           System.out.println("Enrolled in course_2: " + course_2.enrolledStudents().get(i) + 
+                   " On date: " + course_2.getEnrolledDates().get(i));
        }
        
        // Printing counts of enrolled students in courses

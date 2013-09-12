@@ -12,14 +12,19 @@ import java.util.Vector;
  * @author kainlite
  */
 public class Inscription {
-    private Date date = new Date();
+    private Vector dates = new Vector();
     private Vector inscriptions = new Vector();
 
     public void addInscription(String name) {
       inscriptions.add(name);
+      dates.add(new Date());
     }
     
     public Vector getInscriptions() {
         return inscriptions;
+    }
+    
+    public Vector getDates() {
+        return dates;
     }
 }

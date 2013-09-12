@@ -49,6 +49,10 @@ public class Course {
         return inscriptions.getInscriptions();
     }
     
+    public Vector getEnrolledDates() {
+        return inscriptions.getDates();
+    }
+    
     public int countEnrolledStudents() {
         int sum = 0;
         
