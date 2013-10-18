@@ -1,6 +1,7 @@
+
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+* To change this template, choose Tools | Templates
+* and open the template in the editor.
  */
 package relation;
 
@@ -14,8 +15,7 @@ public class CourseException extends Exception {
      * Creates a new instance of
      * <code>CourseException</code> without detail message.
      */
-    public CourseException() {
-    }
+    public CourseException() {}
 
     /**
      * Constructs an instance of
@@ -25,8 +25,6 @@ public class CourseException extends Exception {
      */
     public CourseException(String msg) {
         super(msg);
-        
-        System.out.println("The requested course has no assigned teacher yet, "
-                + "please try again later..");
     }
 }
+

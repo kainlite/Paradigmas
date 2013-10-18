@@ -1,6 +1,9 @@
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
+ * 
+ * No esta implementado como el modelo, se hizo para jugar con las GUIs no mas.
+ * 
  */
 package Charges;
 
@@ -10,7 +13,9 @@ package Charges;
  */
 public interface Charge {
     int max_charge = 40000;
-    char coupled = 'A';
-    char trailer = 'R';
+    char coupled = 'C';
+    char trailer = 'T';
     char simple = 'S';
+    
+    public int getCharge();
 }

@@ -1,8 +1,11 @@
+
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+* To change this template, choose Tools | Templates
+* and open the template in the editor.
  */
 package relation;
+
+//~--- JDK imports ------------------------------------------------------------
 
 import java.util.Vector;
 
@@ -11,56 +14,48 @@ import java.util.Vector;
  * @author kainlite
  */
 public class Course {
-    private String name = new String();
-    private String teacher_name = new String();
-    private Inscription inscriptions = new Inscription();
-    private int duration = 0;
-    
+    private int     duration     = 0;
+    private String  name         = new String();
+    private Vector  inscriptions = new Vector(100, 0);
+    private Teacher teacher;
+
     Course(String name) {
         this.name = name;
     }
-    
+
     public String getName() {
-        return name;
+        return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
-    
-    public String getTeacherName() {
-        return teacher_name;
+
+    public Teacher getTeacher() {
+        return teacher;
     }
-    
-    public void setTeacherName(String teacher_name) {
-        this.teacher_name = teacher_name;
+
+    public void setTeacher(Teacher teacher) {
+        teacher.assignCourse(this);
+        this.teacher = teacher;
     }
-    
-    public void enrollStudent(Student student) throws CourseException {
-        if (!this.teacher_name.equals("")) {
-            inscriptions.addInscription(student.getName());
-            student.incrementCourseQuantity();
-        } else {
-            throw new CourseException();
-        }     
+
+    public void addInscription(Student student) {
+        inscriptions.add(student);
     }
-    
-    public Vector enrolledStudents() {       
-        return inscriptions.getInscriptions();
+
+    public Vector enrolledStudents() {
+        return inscriptions;
     }
-    
-    public Vector getEnrolledDates() {
-        return inscriptions.getDates();
-    }
-    
+
     public int countEnrolledStudents() {
         int sum = 0;
-        
-        for(Object element : inscriptions.getInscriptions()) {
-         sum += 1;
+
+        for (Object element : inscriptions) {
+            sum += 1;
         }
-        
+
         return sum;
     }
-    
 }
+

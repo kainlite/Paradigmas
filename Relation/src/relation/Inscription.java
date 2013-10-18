@@ -1,30 +1,33 @@
+
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+* To change this template, choose Tools | Templates
+* and open the template in the editor.
  */
 package relation;
 
+//~--- JDK imports ------------------------------------------------------------
+
 import java.util.Date;
-import java.util.Vector;
 
 /**
  *
  * @author kainlite
  */
 public class Inscription {
-    private Vector dates = new Vector();
-    private Vector inscriptions = new Vector();
+    private Date   date;
+    private Course inscription;
 
-    public void addInscription(String name) {
-      inscriptions.add(name);
-      dates.add(new Date());
+    Inscription(Course course) {
+        this.date        = new Date();
+        this.inscription = course;
     }
-    
-    public Vector getInscriptions() {
-        return inscriptions;
+
+    public Date getDate() {
+        return this.date;
     }
-    
-    public Vector getDates() {
-        return dates;
+
+    public Course getInscription() {
+        return this.inscription;
     }
 }
+
