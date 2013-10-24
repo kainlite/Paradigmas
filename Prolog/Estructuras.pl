@@ -41,3 +41,11 @@ padre(ana, luis).
 padre(lucia, luna).
 padre(sofia, ivan).
 
+% X es ancestro de Y ?
+% findall(X,descend(martha,X),Z).
+ancestro(X, Y):- padre(X, Y).
+
+
+% X es descendencia de Y ?
+descendencia(Y, Z):- findall(X, descendencia(Y, X), Z).
+descendencia(X, Z):- padre(Y, X), padre(X, Z).

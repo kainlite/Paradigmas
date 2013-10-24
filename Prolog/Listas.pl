@@ -37,9 +37,12 @@ eliminarTodos([H|T], H, L):- eliminarTodos(T, H, L).
 eliminarTodos([H|L1], E, L2):- eliminarTodos(L1, E, L3), L2 = [H|L3].
 
 % 08
-intersec([], L, L).
-intersec(L, [], L).
-intersec([H1|T1], [H2|T2], L3):- intersec(T1, T2, L2), L3 = [H1,H2|L2].
+pertenece(X, [X|_]).
+pertenece(X, [_|L]):- pertenece(X, L).
+  
+intersec([],_,[]).
+intersec([A|B], D, [A|R]):- pertenece(A, D), intersec(B, D, R).
+intersec([A|B], D, R):- not(pertenece(A, D)), intersec(B, D, R).
 
 % 09
 rotarIzq([], _, []):- fail.
