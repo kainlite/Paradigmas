@@ -37,6 +37,7 @@ mujeres(X):- persona(nombre(X),_,sexo(f),_).
 mayores(X):- persona(nombre(X),_,sexo(m),edad(Y)), Y > 21.
 casados(X,Y):- persona(X,tel(S),_,_) , persona(Y,tel(S),_,_).
 
+% 04
 ruta(sanjuan,cordoba,480).
 ruta(cordoba,sanluis,350).
 ruta(sanluis,bsas,710).
