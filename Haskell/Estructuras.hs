@@ -44,20 +44,22 @@ circuito :: Entrada -> Bool
 circuito (q1, q2) = _or((_and ((_not q1), q2)), (_and ((_not q2), q1)))
 
 -- 04
-data Arbol Integer = Hoja Integer | Nodo (Arbol Integer)(Arbol Integer)
+data Arbol a = Rama (Arbol a) (Arbol a) | Hoja a
 
-elArbol = Nodo(Nodo (Hoja 45) (Hoja 78) 2) (Nodo (Hoja 12) 3) (Nodo (Hoja 23) (Hoja 13) 4)
+elArbol = Rama (Rama (Hoja 45) (Hoja 78))
+    (Rama (Hoja 12) (Rama (Hoja 23) (Hoja 13)))
 
-cantNodos :: Arbol a -> Integer
-cantNodos(Hoja x) = 1
-cantNodos(Nodo x y) = 1 + cantNodos x + cantNodos y
+elOtroArbol = Rama (Rama (Hoja 45) (Hoja 78))
+    (Rama (Hoja 12) (Rama (Rama (Hoja 30) (Hoja 23)) (Hoja 13)))
+
+cantidad :: Arbol a -> Integer
+cantidad (Hoja x) = 1
+cantidad (Rama x y) = cantidad x + cantidad y
 
 mostrarHojas :: Arbol a -> [a]
 mostrarHojas(Hoja x) = [x]
-mostrarHojas(Nodo x y) = mostrarHojas x ++ mostrarHojas y
+mostrarHojas(Rama x y) = mostrarHojas x ++ mostrarHojas y
 
 prof :: Arbol a -> Integer
 prof(Hoja x) = 0
-prof(Nodo x y) = 1 + max(prof x)(prof y)
-
--- elOtroArbol=Nodo(Nodo(Hoja 45)(Hoja 78))(Nodo (Hoja 12)(Nodo(Nodo(Hoja 30)(Hoja 23))(Hoja 13)))
+prof(Rama x y) = 1 + max (prof x) (prof y)
