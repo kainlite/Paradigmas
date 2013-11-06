@@ -1,7 +1,7 @@
 -- Tratamiento de listas.
 
 -- 01 
-suma :: [Float] -> Float
+suma :: Num a => [a] -> a
 suma [] = 0
 suma n = head(n) + suma(tail(n))
 
@@ -53,7 +53,7 @@ intersec (a:ax) b = if (existe a b) && not (existe a ax) then [a] ++ (intersec a
 -- 08
 rotarIzq :: Integer -> [a] -> [a]
 rotarIzq 0 a = a
-rotarIzq n (a:ax) = (rotarIzq (n-1) ax) ++ [a] 
+rotarIzq n (a:ax) = (rotarIzq (n-1) (ax ++ [a]))
 
 -- 09 
 insertarEn :: Integer -> a -> [a] -> [a]
